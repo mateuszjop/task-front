@@ -1,0 +1,21 @@
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+  <textarea
+    rows="6"
+    cols="100"
+    ngModel
+    required
+    name="word"></textarea>
+  <button
+    type="submit"
+    color="primary"
+    expand="block"
+    [disabled]="!f.valid">
+    Add
+  </button>
+</form>
+
+<button (click)="onGetWords()">Refresh</button>
+
+<mat-list role="list">
+  <mat-list-item role="listitem" *ngFor="let word of words">{{word}}<hr></mat-list-item>
+</mat-list>
